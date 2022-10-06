@@ -1,0 +1,5 @@
+# MIDDLEWARES
+# - ${file(./src/functions/middlewares//config.yml)}
+
+# API
+# - ${file(./src/functions/apis//config.yml)}

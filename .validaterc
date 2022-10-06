@@ -1,0 +1,32 @@
+{
+  "shared": {
+    "pagination": {
+      "pagination_style": "off"
+    },
+    "paths": {
+      "paths_case_convention": [
+        "error",
+        "lower_dash_case"
+      ]
+    },
+    "walker": {
+      "no_empty_descriptions": "off"
+    },
+    "schemas": {
+      "no_schema_description": "off",
+      "enum_case_convention": "off",
+      "inconsistent_property_type": "off"
+    },
+    "operations": {
+      "no_operation_id": "off"
+    },
+    "parameters": {
+      "authorization_parameter": "off"
+    }
+  },
+  "oas3": {
+    "responses": {
+      "ibm_status_code_guidelines": "off"
+    }
+  }
+}

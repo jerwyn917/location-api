@@ -1,0 +1,39 @@
+PROJECT_NAME: ${env:PROJECT_NAME}
+SERVICE_NAME: ${env:SERVICE_NAME}
+
+# ENVIRONMENT
+STAGE: ${env:STAGE}
+REGION: ${env:REGION}
+ROLE_ARN: ${env:ROLE_ARN}
+API_SECRET: ${env:API_SECRET}
+
+#DYNAMODB
+TABLE_NAME: ${env:TABLE_NAME}
+PAGE_LIMIT: ${env:PAGE_LIMIT}
+
+#CARBON
+CARBON_TIMEZONE: ${env:CARBON_TIMEZONE}
+
+#WEBSOCKET
+WEBSOCKET_URL: ${env:WEBSOCKET_URL}
+
+#FIREHOUSE
+FIREHOSE_STREAM: ${env:FIREHOSE_STREAM}
+FIREHOSE_BUCKET: ${env:FIREHOSE_BUCKET}
+
+warmer_schedule:
+  default: cron(0/5 0-8 ? * MON-FRI *)
+  prod: cron(0/5 0-23 * * ? *)
+
+warmup:
+  api:
+    folderName: '.warmup'
+    cleanFolder: false
+    memorySize: 256
+    name: ${env:SERVICE_NAME}-${env:STAGE}-api-warmer
+    enabled: false
+    events:
+      - schedule: ${self:custom.warmer_schedule.${opt:stage}, self:custom.warmer_schedule.default}
+    concurrency: 5
+    package:
+      individually: false
