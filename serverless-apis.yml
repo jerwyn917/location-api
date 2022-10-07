@@ -53,6 +53,11 @@ provider:
     API_SECRET: ${self:custom.API_SECRET}
     TABLE_NAME: ${self:custom.TABLE_NAME}
     PAGE_LIMIT: ${self:custom.PAGE_LIMIT}
+    MYSQLDB_URL: ${self:MYSQLDB_URL}
+    MYSQLDB_NAME: ${self:MYSQLDB_NAME}
+    MYSQLDB_USERNAME: ${self:MYSQLDB_USERNAME}
+    MYSQLDB_PASSWORD: ${self:MYSQLDB_PASSWORD}
+    MYSQLDB_PORT: ${self:MYSQLDB_PORT}
 
 # you can add packaging information here
 package:

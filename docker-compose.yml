@@ -7,7 +7,19 @@ services:
       URL: /api
     ports:
       - 80:8080
-  dynamodb:
-    image: amazon/dynamodb-local:latest
+  db:
+    image: mysql:5.7.23
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: database
+      TZ: Asia/Manila
     ports:
-      - "8000:8000"
+      # <Port exposed> : < MySQL Port running inside container>
+      - '3306:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+      # Where our data will be persisted
+    volumes:
+      - ./environment/mysql:/var/lib/mysql

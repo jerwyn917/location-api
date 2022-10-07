@@ -46,16 +46,13 @@ provider:
     REGION: ${self:custom.REGION}
     ROLE_ARN: ${self:custom.ROLE_ARN}
     API_SECRET: ${self:custom.API_SECRET}
+    TABLE_NAME: ${self:custom.TABLE_NAME}
+    PAGE_LIMIT: ${self:custom.PAGE_LIMIT}
     MYSQLDB_URL: ${self:custom.MYSQLDB_URL}
     MYSQLDB_NAME: ${self:custom.MYSQLDB_NAME}
     MYSQLDB_USERNAME: ${self:custom.MYSQLDB_USERNAME}
     MYSQLDB_PASSWORD: ${self:custom.MYSQLDB_PASSWORD}
     MYSQLDB_PORT: ${self:custom.MYSQLDB_PORT}
-    S3_REGION: ${env:S3_REGION}
-    S3_BUCKET: ${env:S3_BUCKET}
-    S3_BUCKET_URL: ${env:S3_BUCKET_URL}
-    TABLE_NAME: ${self:custom.TABLE_NAME}
-    PAGE_LIMIT: ${self:custom.PAGE_LIMIT}
 
 # you can add packaging information here
 package:

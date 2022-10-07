@@ -1,0 +1,22 @@
+@startuml
+Client -> Handler: /register | POST \nheaders: { token } \nbody: { \n\tfirst_name: string; \n\tlast_name: string; \n\tmiddle_name: string; \n\temail: string; \n\tpassword: string; \n}
+
+Handler -> Handler: Verify token
+alt Missing token
+Handler --> Client: return 401: Unauthorized
+end
+
+alt JWT Malformed/Invalid signature
+Handler --> Client: return 403: Access Denied
+end
+
+Handler -> Handler: Validate Parameter
+alt Parameter error
+Handler --> Client: return 422: Display parameter errors
+end
+
+Handler -> UserRepository: create(request)
+UserRepository -> UserModel: save(UserModel)
+
+Handler -> Client: return 200: Successfully added\n data: { UserData }
+@enduml

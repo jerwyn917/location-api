@@ -4,36 +4,26 @@ import { Logger } from '../../src/libs/Logger';
 
 const OPENAPI = '3.0.0';
 const PROJECT_INFO = {
-    description: 'Testflock api swagger documentation',
+    description: 'Boilerplate api swagger documentation',
     version: '1.0.0',
-    title: 'Testflock API',
+    title: 'Boilerplate API',
     contact: {
         email: 'zjnrabor@917ventures.com',
     },
-    license: {
-        name: 'Development: https://z21mkhdeqc.execute-api.ap-southeast-1.amazonaws.com/dev',
-        url: 'https://z21mkhdeqc.execute-api.ap-southeast-1.amazonaws.com/dev',
-    },
+    // license: {
+    //     name: '',
+    //     url: '',
+    // },
 };
 
 const TAGS_NAMES = {
-    BROADCAST: 'BROADCAST',
-    CONNECTION: 'CONNECTION',
-    API_GATEWAY: 'API GATEWAY',
+    AUTHENTICATED: 'AUTHENTICATED',
 };
 
 const TAGS = [
     {
-        name: TAGS_NAMES.BROADCAST,
-        description: 'Broadcast APIs Supported',
-    },
-    {
-        name: TAGS_NAMES.CONNECTION,
-        description: 'Connection APIs Supported',
-    },
-    {
-        name: TAGS_NAMES.API_GATEWAY,
-        description: 'API Gateway Supported (Privately accessible)',
+        name: TAGS_NAMES.AUTHENTICATED,
+        description: 'Authenticated APIs Supported',
     },
 ];
 

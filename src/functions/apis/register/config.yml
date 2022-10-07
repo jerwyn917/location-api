@@ -1,0 +1,10 @@
+register:
+  handler: src/functions/apis/register/handler.execute
+  events:
+    - http:
+        path: /register
+        method: post
+        timeout: 300
+        cors: true
+
+  environment:

@@ -31,6 +31,10 @@ phases:
       - export $(grep -v '^#' $DEST_FILENAME | xargs -d '\n')
   build:
     commands:
-#      - serverless deploy --stage $STAGE --aws-profile $AWS_ACCESS_PROFILE --region $REGION --config serverless-apis.yml
+      - serverless deploy --stage $STAGE --aws-profile $AWS_ACCESS_PROFILE --region $REGION --config serverless-apis.yml
 #      - serverless deploy --stage $STAGE --aws-profile $AWS_ACCESS_PROFILE --region $REGION --config serverless-events.yml
 #      - serverless deploy --stage $STAGE --aws-profile $AWS_ACCESS_PROFILE --region $REGION --config serverless-crons.yml
+  post_build:
+    commands:
+      - npm install aws-sdk
+      - npm run migrate
