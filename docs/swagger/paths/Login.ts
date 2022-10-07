@@ -3,17 +3,14 @@ import { METHODS } from '../default';
 import { LANGUAGE } from '../language';
 import * as faker from 'faker';
 
-const key = 'register';
+const key = 'login';
 const method = METHODS.post;
 const tag = TAGS_NAMES.AUTHENTICATED;
-const summary = 'User registration';
+const summary = 'User authentication';
 const parameters = {
     body: {
-        schema: 'RegisterRequest',
+        schema: 'LoginRequest',
         example: {
-            first_name: faker.name.firstName(),
-            last_name: faker.name.lastName(),
-            middle_name: faker.name.middleName(),
             email: faker.internet.email(),
             password: faker.random.alphaNumeric(10),
         },
@@ -27,20 +24,25 @@ const responses = {
             code: 422,
             message: 'Parameter error: Please provide required parameter',
             errors: {
-                first_name: 'first_name is required',
-                last_name: 'last_name is required',
-                middle_name: 'middle_name is required',
                 email: 'email is required',
                 password: 'password is required',
             },
         },
     },
+    404: {
+        description: LANGUAGE.RESPONSES.DEFAULT['404'],
+        schema: 'Response404',
+        example: {
+            code: 404,
+            message: 'User not found',
+        },
+    },
     200: {
         description: LANGUAGE.RESPONSES.DEFAULT['200'],
-        schema: 'RegisterResponse',
+        schema: 'LoginResponse',
         example: {
             code: 200,
-            message: 'Successfully registered',
+            message: 'Success',
             data: {
                 id: faker.datatype.uuid(),
                 first_name: faker.name.firstName(),

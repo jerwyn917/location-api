@@ -1,0 +1,24 @@
+@startuml
+Client -> Handler: /login | POST \nheaders: { token } \nbody: { \n\temail: string; \n\tpassword: string; \n}
+
+Handler -> Handler: Verify token
+alt Missing token
+Handler --> Client: return 401: Unauthorized
+end
+
+alt JWT Malformed/Invalid signature
+Handler --> Client: return 403: Access Denied
+end
+
+Handler -> Handler: Validate Parameter
+alt Parameter error
+Handler --> Client: return 422: Display parameter errors
+end
+
+Handler -> UserRepository: checkUser(id: string)
+alt Parameter error
+Handler --> Client: return 404: User not found
+end
+
+Handler -> Client: return 200: Success \n data: { UserData }
+@enduml

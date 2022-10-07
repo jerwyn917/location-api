@@ -3,3 +3,4 @@
 
 # API
  - ${file(./src/functions/apis/register/config.yml)}
+ - ${file(./src/functions/apis/login/config.yml)}

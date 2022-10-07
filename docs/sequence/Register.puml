@@ -15,8 +15,8 @@ alt Parameter error
 Handler --> Client: return 422: Display parameter errors
 end
 
-Handler -> UserRepository: create(request)
-UserRepository -> UserModel: save(UserModel)
+Handler -> UserRepository: create(request: UserRequest)
+UserRepository -> UserModel: save(request: UserRequest)
 
 Handler -> Client: return 200: Successfully added\n data: { UserData }
 @enduml
