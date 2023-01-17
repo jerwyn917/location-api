@@ -2,7 +2,7 @@
 * Install nvm and install node version 14 (reference: https://github.com/nvm-sh/nvm#installing-and-updating)
 * Install docker (reference: https://docs.docker.com/engine/install/ubuntu/)
 * Install Jest Runner, TSLint and SonarQube plugin on your IDE
-* Clone the boiler plate by ```git clone https://github.com/cjchua1989/aws-lambda.git``` and run ```npm install```
+* Clone the boiler plate by ```git clone https://github.com/``` and run ```npm install```
 * Install serverless via ```npm install -g serverless@2.43.1```
 * Install ```ts-node```, via ```npm install -g typescript ts-node```
 * Copy ```.env.example``` to ```.env```

@@ -1,0 +1,10 @@
+place_update:
+  handler: src/functions/apis/place_update/handler.execute
+  events:
+    - http:
+        path: /place/{place_id}
+        method: put
+        timeout: 300
+        cors: true
+
+  environment:

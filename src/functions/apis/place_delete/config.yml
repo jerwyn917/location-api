@@ -1,0 +1,10 @@
+place_delete:
+  handler: src/functions/apis/place_delete/handler.execute
+  events:
+    - http:
+        path: /place/{place_id}
+        method: delete
+        timeout: 300
+        cors: true
+
+  environment:

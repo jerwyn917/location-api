@@ -1,0 +1,10 @@
+project_post:
+  handler: src/functions/apis/project_post/handler.execute
+  events:
+    - http:
+        path: /project
+        method: post
+        timeout: 300
+        cors: true
+
+  environment:

@@ -3,15 +3,7 @@ import { LoginRequest } from './requests';
 import { UserRepository } from '../../../repositories/UserRepository';
 import { Responses } from './responses';
 import { Bcrypt } from '../../../libs/Bcrypt';
-
-interface UserInterface {
-    id: string;
-    first_name: string;
-    last_name: string;
-    middle_name: string;
-    email: string;
-    created_at: string;
-}
+import { UserInterface } from '../../../helper/Interface';
 
 export class LoginAction {
     private connection: Connection;
@@ -30,7 +22,7 @@ export class LoginAction {
         if (!validate) throw Responses.USER_NOT_FOUND;
 
         return {
-            id: user.id,
+            id: user.user_id,
             first_name: user.first_name,
             last_name: user.last_name,
             middle_name: user.middle_name,

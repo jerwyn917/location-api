@@ -2,15 +2,7 @@ import { Connection } from 'typeorm';
 import { RegisterRequest } from './requests';
 import { UserRepository } from '../../../repositories/UserRepository';
 import { Bcrypt } from '../../../libs/Bcrypt';
-
-interface UserInterface {
-    id: string;
-    first_name: string;
-    last_name: string;
-    middle_name: string;
-    email: string;
-    created_at: string;
-}
+import { UserInterface } from '../../../helper/Interface';
 
 export class RegisterAction {
     private connection: Connection;
@@ -33,7 +25,7 @@ export class RegisterAction {
             .save();
 
         return {
-            id: user.id,
+            id: user.user_id,
             first_name: user.first_name,
             last_name: user.last_name,
             middle_name: user.middle_name,

@@ -1,9 +1,6 @@
-import { CreateDateColumn, DeleteDateColumn, UpdateDateColumn, BaseEntity, PrimaryGeneratedColumn } from 'typeorm';
+import { CreateDateColumn, DeleteDateColumn, UpdateDateColumn, BaseEntity } from 'typeorm';
 
 export class Model extends BaseEntity {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
-
     // timestamps
     @CreateDateColumn({
         type: 'varchar',

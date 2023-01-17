@@ -5,4 +5,9 @@ export class DefaultResponse {
         code: 200,
         message: 'Success',
     };
+
+    static PLACE_NOT_FOUND: HttpResponse = {
+        code: 404,
+        message: 'Place not found',
+    };
 }

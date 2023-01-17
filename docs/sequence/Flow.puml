@@ -1,0 +1,13 @@
+@startuml
+Client -> Handler: Sends request
+
+alt Processing
+Handler -> Action: Pass data
+Action -> Repository: Call methods
+Repository -> Model: Query Database
+Model -> Database: Apply changes
+end
+
+Handler -> Client: Returns response
+
+@enduml

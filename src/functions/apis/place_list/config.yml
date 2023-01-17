@@ -1,0 +1,10 @@
+place_list:
+  handler: src/functions/apis/place_list/handler.execute
+  events:
+    - http:
+        path: /places
+        method: get
+        timeout: 300
+        cors: true
+
+  environment:

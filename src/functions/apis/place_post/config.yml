@@ -1,0 +1,10 @@
+place_post:
+  handler: src/functions/apis/place_post/handler.execute
+  events:
+    - http:
+        path: /place
+        method: post
+        timeout: 300
+        cors: true
+
+  environment:
